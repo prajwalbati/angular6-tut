@@ -21,5 +21,14 @@ export class BikesComponent implements OnInit {
       .subscribe(bikes => this.bikes = bikes);
   }
 
+  add(name: string): void {
+    name = name.trim();
+    if (!name) return;
+    this.bikeService.addBike({name} as Bike)
+    .subscribe(bike=> {
+      this.bikes.push(bike);
+    });
+  }
+
 
 }

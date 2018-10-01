@@ -45,6 +45,13 @@ export class BikeService {
       );
     }
 
+    addBike(bike: Bike): Observable<Bike> {
+      return this.http.post<Bike>(this.bikesUrl, bike, httpOptions).pipe(
+         tap((bike: Bike) => this.log(`added bike w/ id=${bike.id}`)),
+          catchError(this.handleError<Bike>('addBike'))
+      );
+    }
+
     private log(message: string) {
       this.messageService.add(`BikeService: ${message}`);
     }
