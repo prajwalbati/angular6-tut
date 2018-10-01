@@ -3,12 +3,12 @@ import { Bike } from '../bike';
 import { BikeService } from '../bike.service';
 
 @Component({
-  selector: 'app-bikes',
-  templateUrl: './bikes.component.html',
-  styleUrls: ['./bikes.component.css']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: [ './dashboard.component.css' ]
 })
-export class BikesComponent implements OnInit {
-  bikes: Bike[];
+export class DashboardComponent implements OnInit {
+  bikes: Bike[] = [];
 
   constructor(private bikeService: BikeService) { }
 
@@ -18,8 +18,6 @@ export class BikesComponent implements OnInit {
 
   getBikes(): void {
     this.bikeService.getBikes()
-      .subscribe(bikes => this.bikes = bikes);
+      .subscribe(bikes => this.bikes = bikes.slice(1, 5));
   }
-
-
 }

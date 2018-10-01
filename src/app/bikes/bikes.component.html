@@ -1,11 +1,12 @@
 <h2>Bikes Collection</h2>
+<nav>
+    <a routerLink="/">Back</a>
+</nav>
 <ul class="heroes">
-  <li *ngFor="let bike of bikes"
-    [class.selected]="bike === selectedBike"
-    (click)="onSelect(bike)">
+  <li *ngFor="let bike of bikes">
+    <a routerLink="/bike/{{bike.id}}">
     <span class="badge">{{bike.id}}</span> {{bike.name}}
+</a>
   </li>
 </ul>
-
-<app-hero-detail [bike]="selectedBike"></app-hero-detail>
  

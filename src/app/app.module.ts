@@ -4,19 +4,23 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { BikesComponent } from './bikes/bikes.component';
-import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
+import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { BikeDetailComponent } from './bike-detail/bike-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BikesComponent,
-    HeroDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent,
+    BikeDetailComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
