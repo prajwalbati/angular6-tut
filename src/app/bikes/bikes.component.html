@@ -1,0 +1,11 @@
+<h2>Bikes Collection</h2>
+<ul class="heroes">
+  <li *ngFor="let bike of bikes"
+    [class.selected]="bike === selectedBike"
+    (click)="onSelect(bike)">
+    <span class="badge">{{bike.id}}</span> {{bike.name}}
+  </li>
+</ul>
+
+<app-hero-detail [bike]="selectedBike"></app-hero-detail>
+ 
