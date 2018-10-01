@@ -18,7 +18,8 @@ export class BikesComponent implements OnInit {
   }
 
   getBikes(): void {
-    this.bikes = this.bikeService.getBikes();
+    this.bikeService.getBikes()
+      .subscribe(bikes => this.bikes = bikes);
   }
 
   onSelect(bike: Bike): void {

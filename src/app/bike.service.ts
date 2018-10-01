@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs'
 
+import { MessageService } from './message.service';
+
 import { Bike } from './bike';
 import { BIKES } from './mock-bikes';
 
@@ -9,12 +11,11 @@ import { BIKES } from './mock-bikes';
 })
 export class BikeService {
 
-  constructor() { }
+    constructor(private messageService: MessageService) { }
 
-  getBikes(): Bike[] {
-      return BIKES;
-    }
-    /*getBikes(): Observable<Bike[]> {
+    getBikes(): Observable<Bike[]> {
+        // TODO: send the message _after_ fetching the heroes
+      this.messageService.add('BikeService: fetched bikes');
       return of(BIKES);
-    }*/
+    }
 }
