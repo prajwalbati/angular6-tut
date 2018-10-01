@@ -8,6 +8,11 @@ import { MessageService } from './message.service';
 import { Bike } from './bike';
 // import { BIKES } from './mock-bikes';
 
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+
 @Injectable({
   providedIn: 'root'
 })
@@ -30,6 +35,13 @@ export class BikeService {
       return this.http.get<Bike>(url).pipe(
         tap(_ => this.log(`fetched bike id=${id}`)),
         catchError(this.handleError<Bike>(`getBike id=${id}`))
+      );
+    }
+
+    updateBike(bike: Bike): Observable<any> {
+      return this.http.put(this.bikesUrl, bike, httpOptions).pipe(
+        tap(_ => this.log(`updated bike id=${bike.id}`)),
+        catchError(this.handleError<any>('updateBike'))
       );
     }
 

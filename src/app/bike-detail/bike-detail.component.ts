@@ -28,4 +28,9 @@ export class BikeDetailComponent implements OnInit {
       this.location.back();
   }
 
+  save(): void {
+   this.bikeService.updateBike(this.bike)
+     .subscribe(() => this.goBack());
+ }
+
 }
