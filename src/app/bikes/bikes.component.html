@@ -18,6 +18,8 @@
     <a routerLink="/bike/{{bike.id}}">
     <span class="badge">{{bike.id}}</span> {{bike.name}}
 </a>
+<button class="delete" title="delete bike"
+  (click)="delete(bike)">x</button>
   </li>
 </ul>
  

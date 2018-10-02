@@ -30,5 +30,10 @@ export class BikesComponent implements OnInit {
     });
   }
 
+  delete(bike: Bike): void {
+    this.bikes = this.bikes.filter(h => h !== bike);
+    this.bikeService.deleteBike(bike).subscribe();
+  }
+
 
 }

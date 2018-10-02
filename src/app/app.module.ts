@@ -11,6 +11,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BikeDetailComponent } from './bike-detail/bike-detail.component';
+import { BikeSearchComponent } from './bike-search/bike-search.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BikeDetailComponent } from './bike-detail/bike-detail.component';
     BikesComponent,
     MessagesComponent,
     DashboardComponent,
-    BikeDetailComponent
+    BikeDetailComponent,
+    BikeSearchComponent
   ],
   imports: [
     BrowserModule,
