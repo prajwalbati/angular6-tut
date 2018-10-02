@@ -5,3 +5,16 @@ h1 {
   text-align:center;
   text-decoration: underline;
 }
+
+nav a {
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #369;
+    padding: 10px;
+}
+
+nav a:hover {
+    color: #69C;
+    background: #eee;
+}

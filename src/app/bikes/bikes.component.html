@@ -1,6 +1,4 @@
-<h2>Bikes Collection</h2>
-
-<div>
+<div class="addNewBike">
   <label>Add new Bike:
     <input #bikeName />
   </label>
@@ -10,9 +8,6 @@
   </button>
 </div>
 
-<nav>
-    <a routerLink="/">Back</a>
-</nav>
 <ul class="heroes">
   <li *ngFor="let bike of bikes">
     <a routerLink="/bike/{{bike.id}}">
